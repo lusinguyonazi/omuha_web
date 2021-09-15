@@ -15,6 +15,7 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
   <link href="{{ asset('lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -25,6 +26,25 @@
   <link href="{{ asset('lib/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
   <link href="{{ asset('lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
   <link href="{{ asset('lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
+
+  <link href="{{ asset('fonts/nunito/Nunito-Bold')}}" rel="stylesheet">
+  <link href="{{ asset('fonts/nunito/Nunito-Regular')}}" rel="stylesheet">
+  <link href="{{ asset('fonts/nunito/Nunito-Light')}}" rel="stylesheet">
+
+  <style>
+    @font-face {
+      font-family: 'Nunito-Bold';
+      src: url('{{asset("fonts/nunito/Nunito-Bold.ttf")}}');
+    }
+    @font-face {
+        font-family: 'Nunito';
+        src: url('{{asset("fonts/nunito/Nunito-Regular.ttf")}}');
+    }
+    @font-face {
+        font-family: 'Nunito-Light';
+        src: url('{{asset("fonts/nunito/Nunito-Light.ttf")}}');
+    }
+  </style>
 
   <!-- Main Stylesheet File -->
   <link href="{{ asset('css/style.css')}}" rel="stylesheet">
@@ -39,9 +59,9 @@
     <div class="container-fluid">
 
       <div id="logo" class="pull-left">
-        <h1><a href="#intro" class="scrollto">PHRONETEC</a></h1>
+        {{-- <h1><a href="#intro" class="scrollto">OMUHA</a></h1> --}}
         <!-- Uncomment below if you prefer to use an image logo -->
-      {{-- <a href="#intro"><img src="{{ asset(Voyager::image(setting('site.logo')))}}" alt="" title="" /></a> --}}
+      <a href="#intro"><img src="{{ asset(Voyager::image(setting('site.logo')))}}" alt="" title="" id="header-logo-img"/></a>
       </div>
 
       <nav id="nav-menu-container">
@@ -52,6 +72,7 @@
           <li><a href="#portfolio">Products</a></li>
           <li><a href="#team">Team</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="#location">Location</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
@@ -124,7 +145,7 @@
             <p class="description">
               Our words, actions, decisions and behavior combine as a consistent whole. We keep all
               our promises and commitments regardless of the circumstances. All our customers who
-              use our services experience the assurance that comes in working with PHRONETEC (PRC).
+              use our services experience the assurance that comes in working with OMUHA.
             </p>
           </div>
 
@@ -146,6 +167,9 @@
       About Us Section
     ============================-->
     <section id="about">
+      {{-- <div class="elipse">
+        <svg xmlns="http://www.w3.org/2000/svg" id="b0a37f3a-1907-4368-876c-1460423e9ec9" data-name="Layer 1" width="1099.22345" height="734.89191" viewBox="0 0 1099.22345 734.89191"><title>google_analytics</title><path d="M1133.42648,369.28218C1091.79965,205.596,947.96585,87.43752,779.13608,82.69828c-89.25523-2.50549-183.17665,27.0965-251.55836,130.68464C405.338,398.55792,535.08963,526.51953,625.549,587.32434A566.02694,566.02694,0,0,1,742.54458,692.47955C803.647,764.98734,921.194,855.08846,1061.18723,713.91387,1162.65449,611.59034,1161.15406,478.31333,1133.42648,369.28218Z" transform="translate(-50.38827 -82.55404)" fill="#f2f2f2"/></svg>
+      </div> --}}
       <div class="container">
 
         <header class="section-header">
@@ -231,14 +255,14 @@
     <!--==========================
       Call To Action Section
     ============================-->
-    <section id="call-to-action" class="wow fadeIn">
+    {{-- <section id="call-to-action" class="wow fadeIn">
       <div class="container text-center">
         <h3>Request For Service</h3>
         <p> 
         </p>
         <a class="cta-btn" href="#contact">Request For Service</a>
       </div>
-    </section><!-- #call-to-action -->
+    </section><!-- #call-to-action --> --}}
 
     <!--==========================
       Portfolio Section
@@ -284,7 +308,7 @@
       </div>
     </section><!-- #portfolio -->
 
-    <!--==========================
+     <!--==========================
       Team Section
     ============================-->
     <section id="team">
@@ -317,7 +341,7 @@
         </div>
 
       </div>
-    </section><!-- #team -->
+    </section><!-- #team -->  
 
     <!--==========================
       Contact Section
@@ -359,7 +383,7 @@
 
         </div>
 
-        <div class="form">
+        <div class="form" id="contact-form">
           @if (session('status'))
             <div class="alert alert-success" role="alert">
               {{session('status')}}
@@ -414,7 +438,7 @@
       </div>
     </section><!-- #contact -->
 
-    <!--==========================
+    {{-- <!--==========================
       Clients Section
     ============================-->
     <section id="clients" class="wow fadeInUp">
@@ -431,9 +455,39 @@
         </div>
 
       </div>
-    </section><!-- #clients -->
+    </section><!-- #clients --> --}}
 
-  </main>
+  
+
+
+
+
+
+
+
+
+
+<!--==========================
+      Locatio Section
+    ============================-->
+    <section id="location">
+      <div class="container">
+      <header class="section-header wow fadeInUp">
+          <h3>Our Location</h3>
+          <p>
+          </p>
+        </header>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.0468403239206!2d39.25310051414315!3d-6.764143568023932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4dbc4b420693%3A0x610475cb157117a2!2sOMUHA%20COMPANY%20LIMITED!5e0!3m2!1sen!2stz!4v1631726822653!5m2!1sen!2stz" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          
+        </div>
+
+      </div>
+    </section><!-- #location-->  
+
+
+    </main>
+
+
 
   <!--==========================
     Footer
@@ -444,7 +498,7 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-info">
-            <h3>PHRONETEC</h3>
+            <h3>OMUHA</h3>
             <p>
               {!! setting('site.company_description') !!}
             </p>
@@ -489,7 +543,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong> PHRONETEC</strong>. All Rights Reserved
+        &copy; Copyright <strong> OMUHA</strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!--
