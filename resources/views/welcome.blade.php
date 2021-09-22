@@ -15,6 +15,7 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
   <link href="{{ asset('lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -25,6 +26,32 @@
   <link href="{{ asset('lib/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
   <link href="{{ asset('lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
   <link href="{{ asset('lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
+
+  <link href="{{ asset('fonts/nunito/Nunito-Bold')}}" rel="stylesheet">
+  <link href="{{ asset('fonts/nunito/Nunito-Regular')}}" rel="stylesheet">
+  <link href="{{ asset('fonts/nunito/Nunito-Light')}}" rel="stylesheet">
+
+  <style>
+  img {
+  border-radius: 99%;
+}
+    @font-face {
+      font-family: 'Nunito-Bold';
+      src: url('{{asset("fonts/nunito/Nunito-Bold.ttf")}}');
+    }
+    @font-face {
+        font-family: 'Nunito';
+        src: url('{{asset("fonts/nunito/Nunito-Regular.ttf")}}');
+    }
+    @font-face {
+        font-family: 'Nunito-Light';
+        src: url('{{asset("fonts/nunito/Nunito-Light.ttf")}}');
+    }
+
+    .show-read-more .more-text{
+      display: none;
+    }
+  </style>
 
   <!-- Main Stylesheet File -->
   <link href="{{ asset('css/style.css')}}" rel="stylesheet">
@@ -39,9 +66,9 @@
     <div class="container-fluid">
 
       <div id="logo" class="pull-left">
-        <h1><a href="#intro" class="scrollto">PHRONETEC</a></h1>
+        {{-- <h1><a href="#intro" class="scrollto">OMUHA</a></h1> --}}
         <!-- Uncomment below if you prefer to use an image logo -->
-      {{-- <a href="#intro"><img src="{{ asset(Voyager::image(setting('site.logo')))}}" alt="" title="" /></a> --}}
+      <a href="#intro"><img src="{{ asset(Voyager::image(setting('site.logo')))}}" alt="" title="" id="header-logo-img"/></a>
       </div>
 
       <nav id="nav-menu-container">
@@ -52,6 +79,7 @@
           <li><a href="#portfolio">Products</a></li>
           <li><a href="#team">Team</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="#location">Location</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
@@ -101,6 +129,7 @@
 
   <main id="main">
 
+
     <!--==========================
       Featured Services Section
     ============================-->
@@ -109,9 +138,17 @@
         <div class="row">
 
           <div class="col-lg-4 box">
-            <i class="ion-ios-bookmarks-outline"></i>
+            <!-- <i class="ion-ios-bookmarks-outline"></i> -->
+            <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+            <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+<lord-icon
+    src="https://cdn.lordicon.com/wxnxiano.json"
+    trigger="loop"
+    colors="primary:#f1801b,secondary:#f1801b"
+    style="width:70px;height:70px">
+</lord-icon>
             <h4 class="title"><a href="">Innovation and Creativity</a></h4>
-            <p class="description">
+            <p class="description show-read-more">
               We are group enthusiasts who support innovative ideas and initiatives. We enjoy solving
               problems and creating opportunities. We are not afraid of making mistakes and, in fact,
               we learn from them. We work incessantly in order to make a difference.
@@ -119,19 +156,37 @@
           </div>
 
           <div class="col-lg-4 box box-bg">
-            <i class="ion-ios-stopwatch-outline"></i>
+            <!-- <i class="ion-ios-stopwatch-outline"></i> -->
+            <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+            <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+            <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+<lord-icon
+    src="https://cdn.lordicon.com/kbtmbyzy.json"
+    trigger="loop"
+    colors="primary:#f1801b,secondary:#f1801b"
+    style="width:70px;height:70px">
+</lord-icon>
             <h4 class="title"><a href="">Reliability</a></h4>
-            <p class="description">
+            <p class="description show-read-more">
               Our words, actions, decisions and behavior combine as a consistent whole. We keep all
               our promises and commitments regardless of the circumstances. All our customers who
-              use our services experience the assurance that comes in working with PHRONETEC (PRC).
+              use our services experience the assurance that comes in working with OMUHA.
             </p>
           </div>
 
           <div class="col-lg-4 box">
-            <i class="ion-ios-heart-outline"></i>
+            <!-- <i class="ion-ios-heart-outline"></i> -->
+            <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+            <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+            <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+<lord-icon
+    src="https://cdn.lordicon.com/huwchbks.json"
+    trigger="loop"
+    colors="primary:#f1801b,secondary:#f1801b"
+    style="width:80px;height:80px">
+</lord-icon>
             <h4 class="title"><a href="">Affordability</a></h4>
-            <p class="description">
+            <p class="description show-read-more">
               We believe our solutions should benefit many who require them. Thus why our pricing is
               always a bit lower compared to the value we bring in the market. We normally finds ways
               to solve our customers’ problem within their budget.
@@ -146,11 +201,14 @@
       About Us Section
     ============================-->
     <section id="about">
+      {{-- <div class="elipse">
+        <svg xmlns="http://www.w3.org/2000/svg" id="b0a37f3a-1907-4368-876c-1460423e9ec9" data-name="Layer 1" width="1099.22345" height="734.89191" viewBox="0 0 1099.22345 734.89191"><title>google_analytics</title><path d="M1133.42648,369.28218C1091.79965,205.596,947.96585,87.43752,779.13608,82.69828c-89.25523-2.50549-183.17665,27.0965-251.55836,130.68464C405.338,398.55792,535.08963,526.51953,625.549,587.32434A566.02694,566.02694,0,0,1,742.54458,692.47955C803.647,764.98734,921.194,855.08846,1061.18723,713.91387,1162.65449,611.59034,1161.15406,478.31333,1133.42648,369.28218Z" transform="translate(-50.38827 -82.55404)" fill="#f2f2f2"/></svg>
+      </div> --}}
       <div class="container">
 
         <header class="section-header">
           <h3>About Us</h3>
-          <p>
+          <p class=" show-read-more">
             {{setting('site.about_us')}}
           </p>
         </header>
@@ -164,7 +222,7 @@
                 <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
               </div>
               <h2 class="title"><a href="#">Our History</a></h2>
-              <p>
+              <p class=" show-read-more">
                {{setting('site.history')}}
               </p>
             </div>
@@ -177,7 +235,7 @@
                 <div class="icon"><i class="ion-ios-list-outline"></i></div>
               </div>
               <h2 class="title"><a href="#">Our Mission</a></h2>
-              <p>
+              <p class=" show-read-more">
                 {{setting('site.mission')}}
               </p>
             </div>
@@ -190,7 +248,7 @@
                 <div class="icon"><i class="ion-ios-eye-outline"></i></div>
               </div>
               <h2 class="title"><a href="#">Our Vision</a></h2>
-              <p>
+              <p class=" show-read-more">
                 {{setting('site.vission')}}
               </p>
             </div>
@@ -217,9 +275,9 @@
         <?php $index = 0; ?>
           @foreach (\App\Service::all() as $service)
               <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
-                <div class="icon"><i class="ion-ios-analytics-outline"></i></div>
-                <h4 class="title"><a href="">{{$service->title }}</a></h4>
-                <p class="description">{{$service->description}}</p>
+                <div class="icon"><i class="{{$service->icon }}"></i></div>
+                <h4 class="title"><a href="{{$service->link }}" target="_blank" >{{$service->title }}</a></h4>
+                <p class="description show-read-more">{{$service->description}}</p>
               </div>
               <?php $index = 0; ?>
           @endforeach
@@ -231,14 +289,14 @@
     <!--==========================
       Call To Action Section
     ============================-->
-    <section id="call-to-action" class="wow fadeIn">
+    {{-- <section id="call-to-action" class="wow fadeIn">
       <div class="container text-center">
         <h3>Request For Service</h3>
         <p> 
         </p>
         <a class="cta-btn" href="#contact">Request For Service</a>
       </div>
-    </section><!-- #call-to-action -->
+    </section><!-- #call-to-action --> --}}
 
     <!--==========================
       Portfolio Section
@@ -284,7 +342,7 @@
       </div>
     </section><!-- #portfolio -->
 
-    <!--==========================
+     <!--==========================
       Team Section
     ============================-->
     <section id="team">
@@ -297,7 +355,7 @@
         <div class="row">
         <?php $index = 0; ?>
           @foreach (\App\Team::all() as $team)
-              <div class="col-lg-3 col-md-6 wow fadeInUp" {{$index == 0?'':'data-wow-delay=0.'. $index. 's'}} >
+              <div class="col-lg-4 col-md-6 wow fadeInUp" {{$index == 0?'':'data-wow-delay=0.'. $index. 's'}} >
                 <div class="member">
                   <img src="{{asset(Voyager::image($team->image))}}" class="img-fluid" alt="">
                   <div class="member-info">
@@ -317,7 +375,7 @@
         </div>
 
       </div>
-    </section><!-- #team -->
+    </section><!-- #team -->  
 
     <!--==========================
       Contact Section
@@ -359,7 +417,7 @@
 
         </div>
 
-        <div class="form">
+        <div class="form" id="contact-form">
           @if (session('status'))
             <div class="alert alert-success" role="alert">
               {{session('status')}}
@@ -414,7 +472,7 @@
       </div>
     </section><!-- #contact -->
 
-    <!--==========================
+    {{-- <!--==========================
       Clients Section
     ============================-->
     <section id="clients" class="wow fadeInUp">
@@ -431,9 +489,39 @@
         </div>
 
       </div>
-    </section><!-- #clients -->
+    </section><!-- #clients --> --}}
 
-  </main>
+  
+
+
+
+
+
+
+
+
+
+<!--==========================
+      Locatio Section
+    ============================-->
+    <section id="location">
+      <div class="container">
+      <header class="section-header wow fadeInUp">
+          <h3>Our Location</h3>
+          <p>
+          </p>
+        </header>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.0468403239206!2d39.25310051414315!3d-6.764143568023932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4dbc4b420693%3A0x610475cb157117a2!2sOMUHA%20COMPANY%20LIMITED!5e0!3m2!1sen!2stz!4v1631726822653!5m2!1sen!2stz" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          
+        </div>
+
+      </div>
+    </section><!-- #location-->  
+
+
+    </main>
+
+
 
   <!--==========================
     Footer
@@ -444,7 +532,7 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-info">
-            <h3>PHRONETEC</h3>
+           <h3>OMUHA</h3>
             <p>
               {!! setting('site.company_description') !!}
             </p>
@@ -489,23 +577,44 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong> PHRONETEC</strong>. All Rights Reserved
+        &copy; Copyright <strong> OMUHA</strong>. All Rights Reserved
       </div>
-      <div class="credits">
+      <!-- <div class="credits"> -->
         <!--
           All the links in the footer should remain intact.
           You can delete the links only if you purchased the pro version.
           Licensing information: https://bootstrapmade.com/license/
           Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage
         -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
+        <!-- Designed by <a href="https://omuha.com/">Omuha</a>
+      </div> -->
     </div>
   </footer><!-- #footer -->
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <!-- Uncomment below i you want to use a preloader -->
   <div id="preloader"></div> 
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    $(document).ready(function(){
+        var maxLength = 90;
+        $(".show-read-more").each(function(){
+            var myStr = $(this).text();
+            if($.trim(myStr).length > maxLength){
+                var newStr = myStr.substring(0, maxLength);
+                var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+                $(this).empty().html(newStr);
+                $(this).append(' <a href="javascript:void(0);" class="read-more">read more...</a>');
+                $(this).append('<span class="more-text">' + removedStr + '</span>');
+            }
+        });
+        $(".read-more").click(function(){
+            $(this).siblings(".more-text").contents().unwrap();
+            $(this).remove();
+        });
+    });
+</script>
 
   <!-- JavaScript Libraries -->
   <script src="{{ asset('lib/jquery/jquery.min.js') }}"></script>
