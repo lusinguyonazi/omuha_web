@@ -21,3 +21,10 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::post('/contact_us', 'ContactController@store');
+
+
+
+
+Route::get('/', function () {
+    return view('services/cybersecurity');
+});

@@ -51,6 +51,19 @@
     .show-read-more .more-text{
       display: none;
     }
+    .button {
+      background-color: #f1801b;
+    }
+    .col-md-4:hover {
+      background-color: #eee;
+
+    /* color: #fff; */
+    /* border-color: #0a2d27; */
+    /* box-shadow: 0 20px 40px ; */
+    /* border-radius:20px; */
+    
+}
+
   </style>
 
   <!-- Main Stylesheet File -->
@@ -274,11 +287,26 @@
         <div class="row">
         <?php $index = 0; ?>
           @foreach (\App\Service::all() as $service)
-              <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+
+
+
+          <div class="col-md-4 lg-1 col-md-3">
+            <div class="card p-3 ">
+                <div class="mt-3"> <div class="icon"><i class="{{$service->icon }}"width="40"></i></div>
+                <h4 class="title"><a href="{{$service->link }}" target="_blank" >{{$service->title }}</a></h4> <span class="text justify-content mt-3"><p class="description show-read-more">{{$service->description}}</p></span>
+                    <div class="d-block mt-1"> <button class=" btn btn-primary btn-sm "><a href="{services}">See More</a></button> </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+              <!-- <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
                 <div class="icon"><i class="{{$service->icon }}"></i></div>
                 <h4 class="title"><a href="{{$service->link }}" target="_blank" >{{$service->title }}</a></h4>
                 <p class="description show-read-more">{{$service->description}}</p>
-              </div>
+              </div> -->
               <?php $index = 0; ?>
           @endforeach
         </div>
